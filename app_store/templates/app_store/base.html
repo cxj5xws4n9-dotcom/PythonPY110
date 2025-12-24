@@ -1,35 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Fruit Juice</title>
+<head>
+    {% block title %} <!-- Блок для названия страницы-->
+
+    {% endblock %}
+
+    {% block head %} <!-- Блок ссылок в head-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../static/app_store/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="../static/app_store/css/animate.css">
+	<link type="image/x-icon" href="../../{% static 'app_store/images/favicon.png' %}" rel="shortcut icon">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/animate.css' %}">
 
-    <link rel="stylesheet" href="../static/app_store/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../static/app_store/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../static/app_store/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/magnific-popup.css' %}">
 
-    <link rel="stylesheet" href="../static/app_store/css/aos.css">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/aos.css' %}">
 
-    <link rel="stylesheet" href="../static/app_store/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/ionicons.min.css' %}">
 
-    <link rel="stylesheet" href="../static/app_store/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../static/app_store/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/jquery.timepicker.css' %}">
 
 
-    <link rel="stylesheet" href="../static/app_store/css/flaticon.css">
-    <link rel="stylesheet" href="../static/app_store/css/icomoon.css">
-    <link rel="stylesheet" href="../static/app_store/css/style.css">
-  </head>
-  <body class="goto-here">
-  	<div class="py-1 bg-primary">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/flaticon.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/icomoon.css' %}">
+    <link rel="stylesheet" href="../../{% static 'app_store/css/style.css' %}">
+    {% endblock %}
+</head>
+<body class="goto-here">
+    {% block header %} <!-- Блок для header страницы с данными магазина-->
+    <div class="py-1 bg-primary">
 		<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -50,6 +58,9 @@
 		    </div>
 		  </div>
     </div>
+    {% endblock %}
+
+    {% block nav %} <!-- Блок для навигационной панели страницы магазина-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="#">Vegefoods</a>
@@ -67,101 +78,14 @@
 	      </div>
 	    </div>
 	  </nav>
-    <!-- END nav -->
+    {% endblock %}
 
-    <div class="hero-wrap hero-bread" style="background-image: url('../static/images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"></span></p>
-            <h1 class="mb-0 bread">О товаре</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% block content %} <!-- Блок для уникального содержимого страницы-->
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="../static/app_store/images/product-8.jpg" class="image-popup"><img src="../static/app_store/images/product-8.jpg" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>Фруктовый сок</h3>
-    				<div class="rating d-flex">
-							<p class="text-left mr-4">
-								<a href="#" class="mr-2">4.9</a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-							</p>
-							<p class="text-left mr-4">
-								<a href="#" class="mr-2" style="color: #000;">300 <span style="color: #bbb;">Отзывов</span></a>
-							</p>
-							<p class="text-left">
-								<a href="#" class="mr-2" style="color: #000;">800 <span style="color: #bbb;">Продано</span></a>
-							</p>
-						</div>
-    				<p class="price"><span>&#x20bd 120.00</span></p>
-    				<p>Натуральная свежесть и энергия в каждом глотке.
-						</p>
-						<div class="row mt-4">
-							<div class="col-md-6">
-								<div class="form-group d-flex">
-		              <div class="select-wrap">
-	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                  <select name="" id="" class="form-control">
-	                  	<option value="">Маленький</option>
-	                    <option value="">Средний</option>
-	                    <option value="">Большой</option>
-	                    <option value="">Очень большой</option>
-	                  </select>
-	                </div>
-		            </div>
-							</div>
-							<div class="w-100"></div>
-							<div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="ion-ios-remove"></i>
-	                	</button>
-	            		</span>
-	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-	             	<span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="ion-ios-add"></i>
-	                 </button>
-	             	</span>
-	          	</div>
-	          	<div class="w-100"></div>
-	          	<div class="col-md-12">
-	          		<p style="color: #000;">1200 кг в наличии на складе</p>
-	          	</div>
-          	</div>
-          	<p><a href="cart.html" class="btn btn-black py-3 px-5">Добавить в корзину</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+    {% endblock %}
 
-    <section class="ftco-section">
-    	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Продукты</span>
-            <h2 class="mb-4">Товары той же категории</h2>
-          </div>
-        </div>   		
-    	</div>
-    	<div class="container">
-    		<div class="row">
-    		</div>
-    	</div>
-    </section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    {% block news %} <!-- Блок для новостной панели-->
+    <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
@@ -179,6 +103,9 @@
         </div>
       </div>
     </section>
+    {% endblock %}
+
+    {% block footer %} <!-- Блок для нижней панели страницы-->
     <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
@@ -252,29 +179,32 @@
         </div>
       </div>
     </footer>
-    
-  
+    {% endblock %}
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    {% block scripts %} <!-- Блок для загрузки javascript страницы-->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="../static/app_store/js/jquery.min.js"></script>
-  <script src="../static/app_store/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../static/app_store/js/popper.min.js"></script>
-  <script src="../static/app_store/js/bootstrap.min.js"></script>
-  <script src="../static/app_store/js/jquery.easing.1.3.js"></script>
-  <script src="../static/app_store/js/jquery.waypoints.min.js"></script>
-  <script src="../static/app_store/js/jquery.stellar.min.js"></script>
-  <script src="../static/app_store/js/owl.carousel.min.js"></script>
-  <script src="../static/app_store/js/jquery.magnific-popup.min.js"></script>
-  <script src="../static/app_store/js/aos.js"></script>
-  <script src="../static/app_store/js/jquery.animateNumber.min.js"></script>
-  <script src="../static/app_store/js/bootstrap-datepicker.js"></script>
-  <script src="../static/app_store/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="../static/app_store/js/google-map.js"></script>
-  <script src="../static/app_store/js/main.js"></script>
+  	<script src="../../{% static 'app_store/js/jquery.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/popper.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/bootstrap.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery.easing.1.3.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery.waypoints.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery.stellar.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/owl.carousel.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery.magnific-popup.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/aos.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/jquery.animateNumber.min.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/bootstrap-datepicker.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/scrollax.min.js' %}"></script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  	<script src="../../{% static 'app_store/js/google-map.js' %}"></script>
+  	<script src="../../{% static 'app_store/js/main.js' %}"></script>
+    {% endblock %}
 
-  </body>
+    {% block custom_scripts %}  <!-- Блок для загрузки дополнительного кода встроенного в html-->
+
+    {% endblock %}
+</body>
 </html>

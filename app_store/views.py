@@ -30,11 +30,21 @@ def shop_view(request):
 
         if ordering_key := request.GET.get("ordering"):
             reverse = request.GET.get("reverse") in ('true', 'True')
-            data = filtering_category(DATABASE, category_key, ordering_key, reverse)
+            data = filtering_category(
+                DATABASE,
+                category_key,
+                ordering_key,
+                reverse
+            )
         else:
             data = filtering_category(DATABASE, category_key)
 
-        return render(request, 'app_store/shop.html', context={"products": data, "category": category_key})
+        return render(
+            request,
+            'app_store/shop.html',
+            context={
+                "products": data,
+                "category": category_key})
 
 
 def cart_view(request):
@@ -78,9 +88,18 @@ def product_page_view(request, page):
         # товары той же категории, кроме текущего
         data_other_products = [
             p for p in DATABASE.values()
-            if p["category"] == product["category"] and p != product][:5]
+            if p["category"] == product["category"]
+            and p != product
+        ][:5]
 
-        return render(request, 'app_store/product.html', context={'product': product, 'other_products': data_other_products})
+        return render(
+            request,
+            'app_store/product.html',
+            context={
+                'product': product,
+                'other_products': data_other_products
+            }
+        )
 
 def cart_view_json(request):
     if request.method == "GET":

@@ -122,6 +122,7 @@ def cart_add_view_json(request, id_product):
                             status=404,
                             json_dumps_params={'ensure_ascii': False})
 
+
 @login_required(login_url='app_login:login_view')
 def cart_del_view_json(request, id_product):
     if request.method == "GET":

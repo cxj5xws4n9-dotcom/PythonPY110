@@ -59,4 +59,5 @@ urlpatterns = [
     path('weather/', weather_view),
     path('product/', product_view_json),
     path('', include('app_store.urls')),
+    path('login/', include('app_login.urls')),
 ]

@@ -9,6 +9,10 @@ from .views import (
     cart_add_view_json,
     cart_del_view_json,
     cart_view,
+    coupon_check_view,
+    delivery_estimate_view,
+    cart_buy_now_view,
+    cart_remove_view,
 )
 
 app_name = "app_store"
@@ -23,4 +27,9 @@ urlpatterns = [
     path('cart/del/<id_product>', cart_del_view_json),
     path('cart/', cart_view, name='cart_view'),
     path('product/<str:page>/.', product_page_view, name='product_page_view'),
+    path('coupon/check/<slug:name_coupon>', coupon_check_view, name='coupon_check'),
+    path('delivery/estimate', delivery_estimate_view, name='delivery_estimate'),
+    path('cart/buy/<str:id_product>', cart_buy_now_view, name="buy_now"),
+    path('cart/remove/<str:id_product>', cart_remove_view, name="remove_now"),
+
 ]

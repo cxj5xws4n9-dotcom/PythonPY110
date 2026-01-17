@@ -1,3 +1,4 @@
+console.log("Wishlist JS loaded");
 // Переключение сердечка избранного
 function toggleWishlistState(event) {
     event.preventDefault();

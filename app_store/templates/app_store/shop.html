@@ -88,8 +88,25 @@
 	    							<a href="{% url 'app_store:buy_now' product.id %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
-	    							<a href="#" class="buy_now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-heart-empty" data-product-id="{{product.id}}" data-state="inactive" data-action="toggle"></i></span>
+	    							<a class="heart buy_now d-flex justify-content-center align-items-center mx-1">
+	    								<span>
+                                            {% if products.id|stringformat:"s" in wishlist_ids %}
+                                                <i class="ion-ios-heart"
+                                                   data-product-id="{{product.id}}"
+                                                   data-state="active"
+                                                   data-action="toggle"></i>
+                                            {% else %}
+                                               <i class="{% if product.id|stringformat:'s' in wishlist_ids %}
+                                                              ion-ios-heart
+                                                           {% else %}
+                                                              ion-ios-heart-empty
+                                                           {% endif %}"
+                                                     data-product-id="{{product.id}}"
+                                                     data-state="{% if product.id|stringformat:'s' in wishlist_ids %}active{% else %}inactive{% endif %}"
+                                                     data-action="toggle">
+                                               </i>
+                                            {% endif %}
+                                        </span>
 	    							</a>
     							</div>
 								<div class="custom-popup-message" data-product-id="{{product.id}}"></div>

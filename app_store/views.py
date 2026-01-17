@@ -6,6 +6,7 @@ from logic.control_cart import view_in_cart, add_to_cart, remove_from_cart
 from django.shortcuts import redirect
 from django.contrib.auth import get_user
 from django.contrib.auth.decorators import login_required
+from logic.control_wishlist import view_in_wishlist
 
 
 def product_view_json(request):
@@ -42,12 +43,21 @@ def shop_view(request):
         else:
             data = filtering_category(DATABASE, category_key)
 
+        wishlist_ids = []
+        username = get_user(request).username
+        if username:
+            wishlist = view_in_wishlist(username)
+            wishlist_ids = wishlist[username]['products']
+
         return render(
             request,
             'app_store/shop.html',
             context={
                 "products": data,
-                "category": category_key})
+                "category": category_key,
+                "wishlist_ids": wishlist_ids,
+            }
+        )
 
 @login_required(login_url='app_login:login_view')
 def cart_view(request):
@@ -194,4 +204,16 @@ def cart_remove_view(request, id_product):
         if result:
             return redirect("app_store:cart_view")
         return HttpResponseNotFound("Неудачное удаление из корзины")
+
+def product_view(request, slug):
+    product = DATABASE.get(slug)
+
+    if not product:
+        return HttpResponseNotFound("Товар не найден")
+
+    return render(
+        request,
+        'app_store/product.html',
+        context={'product': product}
+    )
 # Create your views here.
